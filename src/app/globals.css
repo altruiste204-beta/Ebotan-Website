@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-montserrat: 'Montserrat', sans-serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply text-gray-900 bg-white;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    @apply bg-ebo-green/20 text-ebo-green-dark;
+  }
+
+  /* Dark mode */
+  html.dark body {
+    @apply bg-gray-950 text-gray-100;
+  }
+
+  html.dark ::selection {
+    @apply bg-ebo-lime/30 text-ebo-lime;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
