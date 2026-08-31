@@ -57,11 +57,12 @@ export function Pricing() {
                       : "border-gray-100 dark:border-gray-800"
                   }`}
                 >
-                  {plan.badge && (
-                    <div className="absolute -top-px right-8 bg-ebo-green dark:bg-ebo-lime text-white dark:text-gray-900 text-[10px] font-bold uppercase tracking-widest px-4 py-1.5 rounded-b-lg">
-                      {plan.badge}
-                    </div>
-                  )}
+ {((plan as { badge?: string }).badge) && (
+  <div className="absolute -top-px right-8 bg-ebo-green dark:bg-ebo-lime text-white dark:text-gray-900 text-[10px] font-bold uppercase tracking-widest px-4 py-1.5 rounded-b-lg">
+    {(plan as { badge?: string }).badge}
+  </div>
+)}
+
 
                   <div className="mb-6">
                     <h3 className="text-xl font-bold text-ebo-black dark:text-white">{plan.name}</h3>
